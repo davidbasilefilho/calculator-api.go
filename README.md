@@ -1,7 +1,7 @@
 # `calculator-api.go`
 
 A simple calculator API, made for learning Go's `net/http` package from the standard library.
-With this project I learned making API endpoints, middleware, error handling, and more.
+With this project I learned how to make API endpoints, middleware, error handling, and more.
 
 
 ## Dependencies
