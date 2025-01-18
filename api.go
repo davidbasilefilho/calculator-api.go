@@ -48,18 +48,13 @@ func (s *APIServer) Run() error {
 
 	createHandlers(router)
 
+	chain := MiddlewareChain(RequestLoggerMiddleware)
+
 	server := http.Server{
 		Addr:    s.addr,
-		Handler: RequestLoggerMiddleware(router),
+		Handler: chain(router),
 	}
 
 	log.Printf("Server has started at %s", s.addr)
 	return server.ListenAndServe()
-}
-
-func RequestLoggerMiddleware(next http.Handler) http.HandlerFunc {
-	return func(w http.ResponseWriter, r *http.Request) {
-		log.Printf("method %s, path: %s", r.Method, r.URL.Path)
-		next.ServeHTTP(w, r)
-	}
 }
