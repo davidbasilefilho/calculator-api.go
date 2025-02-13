@@ -19,7 +19,12 @@ func NewAPIServer(addr string) *APIServer {
 func (s *APIServer) Run() error {
 	router := http.NewServeMux()
 
-	AddHandler(router)
+	routes.AddHandler(router)
+	routes.SubtractHandler(router)
+	routes.MultiplyHandler(router)
+	routes.DivideHandler(router)
+	routes.PowerHandler(router)
+	routes.RootHandler(router)
 
 	chain := MiddlewareChain(RequestLoggerMiddleware)
 
