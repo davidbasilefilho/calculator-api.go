@@ -6,8 +6,7 @@ With this project I learned how to make API endpoints, middleware, error handlin
 
 ## Dependencies
 
-- Go 1.23.5 (I recommend using [`mise`](https://mise.jdx.dev/) for installing Go and basically every language)
-- Docker (the project was built locally with version 27.4.1) for portable deployment
+- Docker for portable deployment
 
 
 ## Build
